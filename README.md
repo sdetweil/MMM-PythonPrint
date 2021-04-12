@@ -33,3 +33,13 @@ install:
 		}
 	}
 	```
+
+	the class PythonPrint is added to the css,
+
+	so to change the color of the print
+	add to custom.css
+```
+	.MMM-PythonPrint .PythonPrint {
+	color:red;
+	}
+  ```

@@ -73,6 +73,7 @@ Module.register("MMM-PythonPrint", {
 		if(this.config.hasOwnProperty("message")){
 			// using text from module config block in config.js
 			wrapper.innerHTML = this.config.message;
+			wrapper.className += "PythonPrint"
 		}
 
 		// pass the created content back to MM to add to DOM.
