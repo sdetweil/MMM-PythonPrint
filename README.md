@@ -9,33 +9,27 @@ install:
    edit config.js and add a block like this
 
    ```
-   	{
+	{
 		module:"MMM-PythonPrint",
 		position:"center",
 		disabled:false,
 		config:{
 			// command file in module folder
-			// the module will add the path
-			// if false, YOU must put in the full path to the command
+			// if false, YOU will provide the full path to the python program
 			localfolder:true,
 
-			//
-			// the python program does ONE output and then ends
-			//
-			   command : 'printitonce.py',
-			   repretative: false,
-			   cycletime:2000	   // how often the program should be executed
+			// spawn a python pgm that writes over and over (timed maybe), but keeps running
+			command : 'printit.py',
+			repetative:true,
 
-			// OR
+			// spawn a one time output  script, but relaunch it every cycletime milliseconds
 
+			// repretative: false,
+			//command: 'printitonce.py',
+			cycletime:2000,
 
-			//
-			// the python program sends output repeatedly and stays running all the time
-			//
-			//   command : 'printit.py',
-			//   repetative:true,
-
-
+			// print debugging messages from the node_helper
+			debug: true
 		}
 	}
 	```

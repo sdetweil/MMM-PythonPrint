@@ -15,7 +15,8 @@ Module.register("MMM-PythonPrint", {
 		command: "",
 		repetative: true,
 		cycletime:0,
-		localfolder:false
+		localfolder:false,
+		debug:false
 	},
 
 	init: function(){
