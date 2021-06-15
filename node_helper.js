@@ -8,7 +8,7 @@ module.exports = NodeHelper.create({
 
 		let handler
 		if(this.config.debug) console.log("PythonPrint spawning "+this.config.command)
-		handler = spawn('python', ['-u', this.config.command]);
+		handler = spawn(this.config.pythonName, ['-u', this.config.command]);
 		handler.stdout.on('data', (data) => {
 			if(this.config.debug) console.log("PythonPrint sending program output="+data)
 			this.sendSocketNotification("message_from_helper", data.toString())

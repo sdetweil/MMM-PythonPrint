@@ -16,6 +16,7 @@ Module.register("MMM-PythonPrint", {
 		repetative: true,
 		cycletime:0,
 		localfolder:false,
+		pythonName:"python",
 		debug:false
 	},
 
