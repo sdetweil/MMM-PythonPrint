@@ -1,32 +1,32 @@
-doc for MMM-PythonPrint
+# MMM-PythonPrint
 
+doc for [MMM-PythonPrint](https://github.com/sdetweil/MMM-PythonPrint)
 
-install:
+## Install:
 
-   git clone this modules URL from github
+* Clone this modules URL from github
 
+* Edit `config.js` and add a block like this:
 
-   edit config.js and add a block like this
-
-   ```
+	```js
 	{
 		module:"MMM-PythonPrint",
 		position:"center",
 		disabled:false,
-		config:{
+		config: {
 			// command file in module folder
 			// if false, YOU will provide the full path to the python program
-			localfolder:true,
+			localfolder: true,
 
 			// spawn a python pgm that writes over and over (timed maybe), but keeps running
-			command : 'printit.py',
-			repetative:true,
+			command: 'printit.py',
+			repetative: true,
 
 			// spawn a one time output  script, but relaunch it every cycletime milliseconds
 
 			// repretative: false,
-			//command: 'printitonce.py',
-			cycletime:2000,
+			// command: 'printitonce.py',
+			cycletime: 2000,
 
 			// print debugging messages from the node_helper
 			debug: true
@@ -34,12 +34,14 @@ install:
 	}
 	```
 
-	the class PythonPrint is added to the css,
+## Styling
 
-	so to change the color of the print
-	add to custom.css
+The class `PythonPrint` is added to the css.
+
+To change the color of the print, add to `custom.css`:
+
+```css
+.MMM-PythonPrint .PythonPrint {
+	color: red;
+}
 ```
-	.MMM-PythonPrint .PythonPrint {
-	color:red;
-	}
-  ```
