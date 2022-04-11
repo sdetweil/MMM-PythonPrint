@@ -14,6 +14,8 @@ doc for [MMM-PythonPrint](https://github.com/sdetweil/MMM-PythonPrint)
 		position:"center",
 		disabled:false,
 		config: {
+			// name of the python process to execute (could be python3)
+			pythonName: 'python',
 			// command file in module folder
 			// if false, YOU will provide the full path to the python program
 			localfolder: true,
