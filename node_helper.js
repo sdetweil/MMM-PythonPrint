@@ -2,12 +2,11 @@ var NodeHelper = require("node_helper");
 const { spawn } = require('child_process');
 // add require of other javascripot components here
 // var xxx = require('yyy') here
-const python='python'
 module.exports = NodeHelper.create({
 	launchit(){
 
 		let handler
-		if(this.config.debug) console.log("PythonPrint spawning "+this.config.command)
+		if(this.config.debug) console.log("PythonPrint spawning "+this.config.command+" using "+this.config.pythonName)
 		handler = spawn(this.config.pythonName, ['-u', this.config.command]);
 		handler.stdout.on('data', (data) => {
 			if(this.config.debug) console.log("PythonPrint sending program output="+data)
@@ -21,8 +20,9 @@ module.exports = NodeHelper.create({
 		})
 	},
 	startit(){
-		if(this.config.command.startsWith(python))
-			this.config.command=this.config.command.slice(python.length)
+
+		if(this.config.command.startsWith(this.config.pythonName))
+			this.config.command=this.config.command.slice(his.config.pythonName.length)
 		if(this.config.localfolder)
 			this.config.command=__dirname+'/'+this.config.command
 		if(this.config.repetative)
