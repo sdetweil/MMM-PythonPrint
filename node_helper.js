@@ -24,7 +24,7 @@ module.exports = NodeHelper.create({
 		if(this.config.command.startsWith(this.config.pythonName))
 			this.config.command=this.config.command.slice(his.config.pythonName.length)
 		if(this.config.localfolder)
-			this.config.command=__dirname+'/'+this.config.command
+			this.config.command=_this.file( this.config.command)
 		if(this.config.repetative)
 			this.launchit()
 		else{
