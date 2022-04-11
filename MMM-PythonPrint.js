@@ -26,6 +26,8 @@ Module.register("MMM-PythonPrint", {
 
 	start: function(){
 		Log.log(this.name + " is starting!");
+		if(this.config.command == "")
+			this.config.command=this.file("printit.py")
 	},
 
 
