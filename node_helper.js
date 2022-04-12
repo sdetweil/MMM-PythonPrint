@@ -22,7 +22,7 @@ module.exports = NodeHelper.create({
 	startit(){
 
 		if(this.config.command.startsWith(this.config.pythonName))
-			this.config.command=this.config.command.slice(his.config.pythonName.length)
+			this.config.command=this.config.command.slice(this.config.pythonName.length)
 		if(this.config.localfolder)
 			this.config.command=this.file( this.config.command)
 		if(this.config.repetative)
