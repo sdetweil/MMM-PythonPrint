@@ -1,5 +1,6 @@
 var NodeHelper = require("node_helper");
 const { spawn } = require('child_process');
+const path=require('path')
 // add require of other javascripot components here
 // var xxx = require('yyy') here
 module.exports = NodeHelper.create({
@@ -24,7 +25,7 @@ module.exports = NodeHelper.create({
 		if(this.config.command.startsWith(this.config.pythonName))
 			this.config.command=this.config.command.slice(this.config.pythonName.length)
 		if(this.config.localfolder)
-			this.config.command=this.file( this.config.command)
+			this.config.command=__dirname+path.sep+this.config.command
 		if(this.config.repetative)
 			this.launchit()
 		else{
