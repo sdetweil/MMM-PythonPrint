@@ -28,7 +28,7 @@ doc for [MMM-PythonPrint](https://github.com/sdetweil/MMM-PythonPrint)
 
 			// repretative: false,
 			// command: 'printitonce.py',
-			cycletime: 2000,
+			// cycletime: 2000,   // only used in repetative:false
 
 			// print debugging messages from the node_helper
 			debug: true
