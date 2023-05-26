@@ -34,6 +34,7 @@ module.exports = NodeHelper.create({
 		if(this.config.repetative)
 			this.launchit()
 		else{
+			  this.launchit()
 				setInterval( ()=>{ self.launchit() }, self.config.cycletime )
 		}
 
