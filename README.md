@@ -36,6 +36,10 @@ doc for [MMM-PythonPrint](https://github.com/sdetweil/MMM-PythonPrint)
 		}
 	}
 	```
+## multiple use
+
+this module can be used multiple times in config.js with different scripts and configuration
+
 
 ## Styling
 

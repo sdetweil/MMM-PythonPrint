@@ -38,7 +38,9 @@ Module.register("MMM-PythonPrint", {
 		// once everybody is loaded up
 		if(notification==="ALL_MODULES_STARTED"){
 			// send our config to our node_helper
-			this.sendSocketNotification("CONFIG",this.config)
+			let temp = this.config
+			temp.identifier = this. identifier
+			this.sendSocketNotification("CONFIG",temp)
 		}
 
 	},
@@ -47,8 +49,9 @@ Module.register("MMM-PythonPrint", {
 	// payload is a notification dependent data structure, up to you to design between module and node_helper
 	socketNotificationReceived: function(notification, payload) {
 		Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
-		if(notification === "message_from_helper"){
-			this.config.message = payload;
+		// get to see if this message is for us
+		if(notification === "message_from_helper" && payload.identifier == this.identifier){
+			this.config.message = payload.message;
 			// tell mirror runtime that our data has changed,
 			// we will be called back at GetDom() to provide the updated content
 			this.updateDom(1000)
