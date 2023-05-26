@@ -32,7 +32,8 @@ doc for [MMM-PythonPrint](https://github.com/sdetweil/MMM-PythonPrint)
                         // this is milliseconds
 
 			// print debugging messages from the node_helper
-			debug: true
+			debug: true,
+			transform:(data)=>{return data.replace(/\n/g,"<br>")}
 		}
 	}
 	```
@@ -40,6 +41,10 @@ doc for [MMM-PythonPrint](https://github.com/sdetweil/MMM-PythonPrint)
 
 this module can be used multiple times in config.js with different scripts and configuration
 
+## transform
+
+the transform function can convert the output of the python script in any way it chooses.
+if html content is in the resulting string, it is ok, as the module will insert it as html content always
 
 ## Styling
 

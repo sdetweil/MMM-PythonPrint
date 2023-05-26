@@ -17,7 +17,8 @@ Module.register("MMM-PythonPrint", {
 		cycletime:0,
 		localfolder:false,
 		pythonName:"python",
-		debug:false
+		debug:false,
+		transform: (data)=>{ return data.replace(/\n/g,"<br>")}
 	},
 
 	init: function(){
@@ -78,7 +79,7 @@ Module.register("MMM-PythonPrint", {
 		// if user supplied message text in its module config, use it
 		if(this.config.hasOwnProperty("message")){
 			// using text from module config block in config.js
-			wrapper.innerHTML = this.config.message;
+			wrapper.innerHTML = this.config.transform(this.config.message);
 			wrapper.className += "PythonPrint"
 		}
 
