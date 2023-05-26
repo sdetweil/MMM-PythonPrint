@@ -11,7 +11,7 @@ doc for [MMM-PythonPrint](https://github.com/sdetweil/MMM-PythonPrint)
 	```js
 	{
 		module:"MMM-PythonPrint",
-		position:"center",
+        position:"center middle",
 		disabled:false,
 		config: {
 			// name of the python process to execute (could be python3)
