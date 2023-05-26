@@ -9,19 +9,24 @@ module.exports = NodeHelper.create({
 		let handler
 		if(this.config.debug) console.log("PythonPrint spawning "+this.config.command+" using "+this.config.pythonName)
 		handler = spawn(this.config.pythonName, ['-u', this.config.command]);
+
 		handler.stdout.on('data', (data) => {
 			if(this.config.debug) console.log("PythonPrint sending program output="+data)
 			this.sendSocketNotification("message_from_helper", { identifier: this.config.identifier, message: data.toString())
 		})
+
 		handler.stderr.on('data', (data)=>{
 			if(this.config.debug) console.log("PythonPrint program error="+data)
 		})
+
 		handler.on('error', (error)=>{
 			if(this.config.debug) console.log("PythonPrint spawn error="+data)
 		})
 	},
-	startit(){
 
+
+	startit(){
+		let self = this
 		if(this.config.command.startsWith(this.config.pythonName))
 			this.config.command=this.config.command.slice(this.config.pythonName.length)
 		if(this.config.localfolder)
@@ -29,7 +34,7 @@ module.exports = NodeHelper.create({
 		if(this.config.repetative)
 			this.launchit()
 		else{
-				setInterval( ()=>{ this.launchit() }, this.config.cycletime )
+				setInterval( ()=>{ self.launchit() }, self.config.cycletime )
 		}
 
 	},
