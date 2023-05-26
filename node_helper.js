@@ -12,7 +12,7 @@ module.exports = NodeHelper.create({
 
 		handler.stdout.on('data', (data) => {
 			if(this.config.debug) console.log("PythonPrint sending program output="+data)
-			this.sendSocketNotification("message_from_helper", { identifier: this.config.identifier, message: data.toString())
+			this.sendSocketNotification("message_from_helper", { identifier: this.config.identifier, message: data.toString() } )
 		})
 
 		handler.stderr.on('data', (data)=>{
