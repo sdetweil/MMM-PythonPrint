@@ -8,7 +8,9 @@ module.exports = NodeHelper.create({
 
 		let handler
 		if(payload.debug) console.log("PythonPrint spawning "+payload.command+" using "+payload.pythonName)
-		handler = spawn(payload.pythonName, ['-u', payload.command]);
+		let command_array= payload.command.split(' ')
+                command_array.unshift("-u") 
+		handler = spawn(payload.pythonName, command_array);
 
 		handler.stdout.on('data', (data) => {
 			if(payload.debug) console.log("PythonPrint sending program output="+data+" identifier="+payload.identifier)

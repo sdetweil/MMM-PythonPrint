@@ -84,3 +84,11 @@ script_is_long_running
 I provided a sample of each
 
 also, in many cases, you are using someone else’s script and don’t have control over how it works, and don’t want to rewrite it
+
+
+if you need to pass parameters to your python script, they go as part of the command parameter, space separated
+
+for example
+```js
+   command:"printitonce.py this is a test of parms"
+```
